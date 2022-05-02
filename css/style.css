@@ -6,6 +6,17 @@
     text-decoration: none
 }
 
+:root {
+    --primary: #0d84d4;
+    --secondary: #232B38;
+    --ternary: #6C6C6C;
+    --danger: #FE4545;
+    --pure: #FEFEFE;
+    --light: #F0F0F0;
+    --heaven: #FFFFFF;
+    --footer: #2D333F;
+}
+
 html {
     scroll-behavior: smooth
 }
@@ -81,7 +92,7 @@ section .title::after {
     bottom: -8px;
     left: 50%;
     font-size: 20px;
-    color: crimson;
+    color: var(--primary);
     padding: 0 5px;
     background: #fff;
     transform: translateX(-50%)
@@ -98,7 +109,7 @@ section .title::after {
 
 .navbar.sticky {
     padding: 15px 0;
-    background: crimson
+    background: var(--primary)
 }
 
 .navbar .max-width {
@@ -114,7 +125,7 @@ section .title::after {
 }
 
 .navbar .logo a span {
-    color: crimson;
+    color: var(--primary);
     transition: all .3s ease
 }
 
@@ -137,7 +148,7 @@ section .title::after {
 }
 
 .navbar .menu li a:hover {
-    color: crimson
+    color: var(--primary)
 }
 
 .navbar.sticky .menu li a:hover {
@@ -155,7 +166,7 @@ section .title::after {
     position: fixed;
     height: 45px;
     width: 42px;
-    background: crimson;
+    background: var(--primary);
     right: 30px;
     bottom: 10px;
     text-align: center;
@@ -183,7 +194,7 @@ section .title::after {
 
 .home {
     display: flex;
-    background: url("../images/bg.jpg") no-repeat center;
+    background: url("../images/why-is-cybersecurity-important.jpg") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
@@ -217,25 +228,25 @@ section .title::after {
 }
 
 .home .home-content .text-3 span {
-    color: crimson;
+    color: var(--primary);
     font-weight: 500
 }
 
 .home .home-content a {
     display: inline-block;
-    background: crimson;
+    background: var(--primary);
     color: #fff;
     font-size: 25px;
     padding: 12px 36px;
     margin-top: 20px;
     font-weight: 400;
     border-radius: 6px;
-    border: 2px solid crimson;
+    border: 2px solid var(--primary);
     transition: all .3s ease
 }
 
 .home .home-content a:hover {
-    color: crimson;
+    color: var(--primary);
     background: 0 0
 }
 
@@ -265,7 +276,7 @@ section .title::after {
 }
 
 .about .about-content .right .text span {
-    color: crimson
+    color: var(--primary)
 }
 
 .about .about-content .right p {
@@ -274,19 +285,19 @@ section .title::after {
 
 .about .about-content .right a {
     display: inline-block;
-    background: crimson;
+    background: var(--primary);
     color: #fff;
     font-size: 20px;
     font-weight: 500;
     padding: 10px 30px;
     margin-top: 20px;
     border-radius: 6px;
-    border: 2px solid crimson;
+    border: 2px solid var(--primary);
     transition: all .3s ease
 }
 
 .about .about-content .right a:hover {
-    color: crimson;
+    color: var(--primary);
     background: 0 0
 }
 
@@ -318,7 +329,7 @@ section .title::after {
 }
 
 .services .serv-content .card:hover {
-    background: crimson
+    background: var(--primary)
 }
 
 .services .serv-content .card .box {
@@ -331,7 +342,7 @@ section .title::after {
 
 .services .serv-content .card i {
     font-size: 50px;
-    color: crimson;
+    color: var(--primary);
     transition: color .3s ease
 }
 
@@ -365,19 +376,19 @@ section .title::after {
 
 .skills .skills-content .left a {
     display: inline-block;
-    background: crimson;
+    background: var(--primary);
     color: #fff;
     font-size: 18px;
     font-weight: 500;
     padding: 8px 16px;
     margin-top: 20px;
     border-radius: 6px;
-    border: 2px solid crimson;
+    border: 2px solid var(--primary);
     transition: all .3s ease
 }
 
 .skills .skills-content .left a:hover {
-    color: crimson;
+    color: var(--primary);
     background: 0 0
 }
 
@@ -410,7 +421,7 @@ section .title::after {
     height: 100%;
     left: 0;
     top: 0;
-    background: crimson
+    background: var(--primary)
 }
 
 .skills-content .right .html::before {
@@ -447,7 +458,7 @@ section .title::after {
 }
 
 .teams .carousel .card:hover {
-    background: crimson
+    background: var(--primary)
 }
 
 .teams .carousel .card .box {
@@ -473,7 +484,7 @@ section .title::after {
     width: 150px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid crimson;
+    border: 5px solid var(--primary);
     transition: all .3s ease
 }
 
@@ -492,7 +503,7 @@ section .title::after {
     margin: 0 5px;
     outline: none !important;
     border-radius: 50%;
-    border: 2px solid crimson !important;
+    border: 2px solid var(--primary) !important;
     transition: all .3s ease
 }
 
@@ -503,7 +514,7 @@ section .title::after {
 
 .owl-dot.active,
 .owl-dot:hover {
-    background: crimson !important
+    background: var(--primary) !important
 }
 
 .contact .title::after {
@@ -540,7 +551,7 @@ section .title::after {
 
 .contact .contact-content .row i {
     font-size: 25px;
-    color: crimson
+    color: var(--primary)
 }
 
 .contact .contact-content .info .head {
@@ -610,13 +621,13 @@ section .title::after {
     border-radius: 6px;
     cursor: pointer;
     flex-wrap: nowrap;
-    background: crimson;
-    border: 2px solid crimson;
+    background: var(--primary);
+    border: 2px solid var(--primary);
     transition: all .3s ease
 }
 
 .right form .button-area button:hover {
-    color: crimson;
+    color: var(--primary);
     background: 0 0
 }
 
@@ -628,7 +639,7 @@ footer {
 }
 
 footer span a {
-    color: crimson;
+    color: var(--primary);
     text-decoration: none
 }
 
