@@ -76,12 +76,12 @@ function sendMsg() {
     const { cname, cemail, csubject, cmessage, contactForm, successMsg } = getFormElements();
 
     if (validateForm()) {
-        const link = "mailto:amitkrraj.cse@gmail.com?subject=" + encodeURIComponent(csubject.value) + "&body=" + encodeURIComponent('From: ' + cname.value + '\nEmail: ' + cemail.value + '\n\n' + cmessage.value);
+        const link = "mailto:amitkrraj.cse@gmail.com?subject=" + encodeURIComponent(csubject.value) + "&body=" + encodeURIComponent(cmessage.value);
         window.open(link);
 
         // Show success message
         if (successMsg) {
-            successMsg.textContent = 'Message sent! Opening your email client...';
+            successMsg.textContent = 'Opening your mail...';
             successMsg.style.display = 'block';
             successMsg.style.color = '#28a745';
 
