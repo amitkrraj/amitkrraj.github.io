@@ -1,24 +1,38 @@
-const cname = document.getElementById('formname');
-const cemail = document.getElementById('formemail');
-const csubject = document.getElementById('formsubject');
-const cmessage = document.getElementById('formmessage');
-const contactForm = document.getElementById('contactForm');
-const successMsg = document.getElementById('successMsg');
+// Get form elements safely
+function getFormElements() {
+    return {
+        cname: document.getElementById('formname'),
+        cemail: document.getElementById('formemail'),
+        csubject: document.getElementById('formsubject'),
+        cmessage: document.getElementById('formmessage'),
+        contactForm: document.getElementById('contactForm'),
+        successMsg: document.getElementById('successMsg')
+    };
+}
 
 // Validation functions
 function validateEmail(email) {
-    const re = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
 
 function validateForm() {
+    const { cname, cemail, csubject, cmessage, successMsg } = getFormElements();
+
+    // Check if elements exist
+    if (!cname || !cemail || !csubject || !cmessage) {
+        console.error('Form elements not found');
+        return false;
+    }
+
     let isValid = true;
 
     // Clear previous errors
     document.querySelectorAll('.error').forEach(el => el.textContent = '');
-    successMsg.textContent = '';
-    successMsg.style.display = 'none';
-
+    if (successMsg) {
+        successMsg.textContent = '';
+        successMsg.style.display = 'none';
+    }
     // Validate name
     if (!cname.value.trim()) {
         document.getElementById('nameError').textContent = 'Name is required';
@@ -59,37 +73,35 @@ function validateForm() {
 }
 
 function sendMsg() {
-    if (validateForm()) {
-        // Create mailto link
-        const link = \"mailto:amitkrraj.cse@gmail.com?subject=\" +
-                    encodeURIComponent(csubject.value) +
-                    \"&body=\" + encodeURIComponent(
-                        'From: ' + cname.value + '\\n' +
-                        'Email: ' + cemail.value + '\\n\\n' +
-                        cmessage.value
-                    );
+    const { cname, cemail, csubject, cmessage, contactForm, successMsg } = getFormElements();
 
-        // Open mailto
-        window.location.href = link;
+    if (validateForm()) {
+        const link = "mailto:amitkrraj.cse@gmail.com?subject=" + encodeURIComponent(csubject.value) + "&body=" + encodeURIComponent('From: ' + cname.value + '\nEmail: ' + cemail.value + '\n\n' + cmessage.value);
+        window.open(link);
 
         // Show success message
-        successMsg.textContent = 'Message sent! Opening your email client...';
-        successMsg.style.display = 'block';
-        successMsg.style.color = '#28a745';
+        if (successMsg) {
+            successMsg.textContent = 'Message sent! Opening your email client...';
+            successMsg.style.display = 'block';
+            successMsg.style.color = '#28a745';
 
-        // Reset form after a delay
-        setTimeout(() => {
-            contactForm.reset();
-            successMsg.textContent = '';
-            successMsg.style.display = 'none';
-        }, 2000);
+            // Reset form after a delay
+            setTimeout(() => {
+                if (contactForm) contactForm.reset();
+                successMsg.textContent = '';
+                successMsg.style.display = 'none';
+            }, 2000);
+        }
     }
 }
 
 // Handle form submission
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        sendMsg();
-    });
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const { contactForm } = getFormElements();
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            sendMsg();
+        });
+    }
+});

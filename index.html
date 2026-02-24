@@ -276,23 +276,32 @@
                 </div>
                 <div class="column right">
                     <div class="text">Message me</div>
-                    <form action="#">
+                    <form id="contactForm" novalidate>
                         <div class="fields">
                             <div class="field name">
+                                <label for="formname">Name</label>
                                 <input type="text" placeholder="Your Name" id="formname" required>
+                                <span class="error" id="nameError"></span>
                             </div>
                             <div class="field email">
+                                <label for="formemail">Email</label>
                                 <input type="email" placeholder="Your Email" id="formemail" required>
+                                <span class="error" id="emailError"></span>
                             </div>
                         </div>
                         <div class="field">
+                            <label for="formsubject">Subject</label>
                             <input type="text" placeholder="Message Subject" id="formsubject" required>
+                            <span class="error" id="subjectError"></span>
                         </div>
                         <div class="field textarea">
+                            <label for="formmessage">Message</label>
                             <textarea cols="30" rows="10" placeholder="Your Message..." id="formmessage" required></textarea>
+                            <span class="error" id="messageError"></span>
                         </div>
                         <div class="button-area">
-                            <button type="submit" id="send-btn" onclick="sendMsg()">Send message</button>
+                            <button type="submit" id="send-btn">Send message</button>
+                            <span class="success" id="successMsg"></span>
                         </div>
                     </form>
                 </div>
