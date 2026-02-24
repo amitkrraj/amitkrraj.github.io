@@ -425,23 +425,31 @@ section .title::after {
 }
 
 .skills-content .right .html::before {
-    width: 80%
+    width: 95%
 }
 
 .skills-content .right .css::before {
-    width: 60%
+    width: 80%
 }
 
 .skills-content .right .js::before {
-    width: 30%
+    width: 90%
 }
 
-.skills-content .right .cryptography::before {
-    width: 40%
+.skills-content .right .node::before {
+    width: 75%
+}
+
+.skills-content .right .sql::before {
+    width: 70%
 }
 
 .skills-content .right .c::before {
-    width: 60%
+    width: 70%
+}
+
+.skills-content .right .python::before {
+    width: 55%
 }
 
 .teams .title::after {
@@ -629,6 +637,37 @@ section .title::after {
 .right form .button-area button:hover {
     color: var(--primary);
     background: 0 0
+}
+
+/* Social media links */
+.contact .contact-content .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px
+}
+
+.contact .contact-content .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    transition: all .3s ease;
+    text-decoration: none
+}
+
+.contact .contact-content .social-links a:hover {
+    background: #fff;
+    color: var(--primary);
+    transform: translateY(-3px)
+}
+
+.contact .contact-content .social-links i {
+    font-size: 18px;
+    color: inherit
 }
 
 footer {

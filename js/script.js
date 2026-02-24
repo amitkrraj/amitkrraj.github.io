@@ -25,15 +25,15 @@ $(document).ready(function() {
         $('.menu-btn i').toggleClass("active");
     });
     var typed = new Typed(".typing", {
-        strings: ["Web Developer", "Programmer", "Learner"],
+        strings: ["Full Stack Developer", "PL/SQL Developer", "App Developer", "Programmer"],
         typeSpeed: 100,
-        backSpeed: 60,
+        backSpeed: 70,
         loop: true
     });
     var typed = new Typed(".typing-2", {
-        strings: ["Web Developer", "Programmer", "Learner"],
+        strings: ["Full Stack Developer", "PL/SQL Developer", "App Developer", "Programmer"],
         typeSpeed: 100,
-        backSpeed: 60,
+        backSpeed: 70,
         loop: true
     });
     $('.carousel').owlCarousel({
